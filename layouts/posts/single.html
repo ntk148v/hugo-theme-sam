@@ -2,6 +2,8 @@
 
 {{ with .Params.tags }}<div class="tag-container">{{ range . }}<span class="tag"><a href="{{ "tags/" | absURL }}{{ . | urlize }}">{{.}}</a></span>{{ end }}</div>{{ end }}<hr/>{{ .Content }}</div>{{ end }}
 
+{{ if .Params.comment }}
 {{ define "comments" }}<div class="section" id="comments">{{ partial "comments.html" }}</div>{{ end }}
+{{ end }}
 
 {{ define "bottom-menu" }}<div class="section bottom-menu">{{ partial "bottom_menu.html" (dict "Page" . "show_back_menu_item" true) }}</div>{{ end }}
