@@ -13,12 +13,7 @@
     | {{ .Content }}
 | {{ end }}
 |
-| {{ define "comments" }}
-.section.comments
-        | {{ partial "comments.html" . }}
-| {{ end }}
-|
 | {{ define "bottom-menu" }}
 .section.bottom-menu
-        | {{ partial "bottom_menu.html" (dict "Page" . "show_back_menu_item" true) }}
+        | {{ partial "bottom_menu.html" (dict "Page" . "show_back_menu_item" true "comment" .Params.comment) }}
 | {{ end }}
