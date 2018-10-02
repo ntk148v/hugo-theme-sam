@@ -13,11 +13,9 @@
     | {{ .Content }}
 | {{ end }}
 |
-| {{ if .Params.comment }}
 | {{ define "comments" }}
 .section.comments
         | {{ partial "comments.html" }}
-| {{ end }}
 | {{ end }}
 |
 | {{ define "bottom-menu" }}
