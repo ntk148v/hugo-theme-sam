@@ -12,7 +12,7 @@
 
 {{ range shuffle $files }}
 
-{{ if not .IsDir }}<div><a href="{{ $src | absURL }}{{ .Name }}"><img src="{{ $src | absURL }}{{ .Name }}" alt="{{ .Name }}"/></a></div>{{ end }}
+{{ if not .IsDir }}<div><a href="{{ $src | absURL }}/{{ .Name }}"><img src="{{ $src | absURL }}/{{ .Name }}" alt="{{ .Name }}"/></a></div>{{ end }}
 
 {{ end }}</div>
 {{ else }}<div class="grid">
