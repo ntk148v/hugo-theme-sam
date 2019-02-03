@@ -1,4 +1,4 @@
-{{ define "section_content" }}<div class="section" id="content">{{ .Content }}<br/><q>Keep scrolling!</q><ul>{{ range .Data.Pages }}<li>
+{{ define "section_content" }}<div class="section" id="content">{{ .Content }}<q>Keep scrolling!</q><ul>{{ range .Data.Pages }}<li>
 {{ if .Params.showDate }}
 
 {{ .Date.Format (.Site.Params.dateForm | default "Mon Jan 02, 2006")}} --
