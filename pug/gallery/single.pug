@@ -2,6 +2,9 @@
 .section#content
     | {{ .Date.Format (.Site.Params.dateForm | default "Mon Jan 02, 2006") }}
     | {{ .Content }}
+    br
+    q.
+        Click to picture for fullsize.
 |
 | {{ if .Site.Params.clickablePhotos }}
 .grid
