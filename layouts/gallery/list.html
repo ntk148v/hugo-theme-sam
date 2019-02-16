@@ -14,4 +14,4 @@
 
 {{ $folder := (print $content $path $name $cursubfolder) }}
 
-{{ $files := readDir $folder }}<a href="{{.Permalink}}">{{.Title}}</a><br/>{{ if $previewImagesEnabled}}<a href="{{.Permalink}}"><img src="{{ $src | absURL }}/{{ $previewSubdirectory }}{{ (index $files 0).Name }}" width="50%" height="50%"/></a>{{ end }}</li>{{ end }}</ul></div>{{ end }}
+{{ $files := readDir $folder }}<a href="{{.Permalink}}">{{.Title}}</a><br/>{{ if $previewImagesEnabled}}<a href="{{.Permalink}}"><img src="{{ $src | absURL }}/{{ $previewSubdirectory }}{{ (index $files 0).Name }}"/></a>{{ end }}</li>{{ end }}</ul></div>{{ end }}

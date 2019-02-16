@@ -27,7 +27,7 @@
             br
             | {{ if $previewImagesEnabled}}
             a(href='{{.Permalink}}')
-                img(src='{{ $src | absURL }}/{{ $previewSubdirectory }}{{ (index $files 0).Name }}' width="50%" height="50%")
+                img(src='{{ $src | absURL }}/{{ $previewSubdirectory }}{{ (index $files 0).Name }}')
             | {{ end }}
         | {{ end }}
 | {{ end }}
