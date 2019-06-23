@@ -1,17 +1,30 @@
-{{ define "section_content" }}<div class="section" id="content">{{ .Content }}<q>Keep scrolling!</q><ul>{{ range .Data.Pages }}<li>
-{{ if .Params.showDate }}
+{{ define "section_content" }}
+<div class="section" id="content">
+    {{ .Content }}
+</div>
 
-{{ .Date.Format (.Site.Params.dateForm | default "Mon Jan 02, 2006")}} --
+{{ if .Params.clickablePhotos }}
+    <div class="grid">
+    {{ $images := .Resources.ByType "image" }}
+    {{ range shuffle $images }}
+    {{ $resized := .Resize $.Params.maxWidth }}
+        <div>
+            <a href="{{ .RelPermalink }}">
+                <img src="{{ $resized.RelPermalink }}" alt="{{ .Name }}" />     
+            </a>
+        </div>
+        {{ end }}
+    </div>
+{{ else }}
+    <div class="grid">
+    {{ $images := .Resources.ByType "image" }}
+    {{ range shuffle $images }}
+    {{ $resized := .Resize $.Params.maxWidth }}
+        <div>
+            <img src="{{ $resized.RelPermalink }}" alt="{{ .Name }}" />
+        </div>
+    {{ end }}
 
+    </div>
 {{ end }}
-{{ $previewSubdirectory := .Site.Params.smallImagesSubfolder | default "small/"}}
-{{ $previewImagesEnabled := .Site.Params.smallPreviewImages }}
-{{ $cursubfolder := index (last 1 (split (delimit (split .Permalink "/") "," "") ",")) 0 }}
-{{ $name := .Site.Params.galleryFolder | default "images/"}}
-{{ $path := "gallery/" }}
-{{ $content := "/content/" }}
-{{ $src := (print $path $name $cursubfolder) }}
-
-{{ $folder := (print $content $path $name $cursubfolder) }}
-
-{{ $files := readDir $folder }}<a href="{{.Permalink}}">{{.Title}}</a><br/>{{ if $previewImagesEnabled}}<a href="{{.Permalink}}"><img src="{{ $src | absURL }}/{{ $previewSubdirectory }}{{ (index $files 0).Name }}"/></a>{{ end }}</li>{{ end }}</ul></div>{{ end }}
+{{ end }}
