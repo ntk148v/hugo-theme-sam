@@ -1,3 +1,14 @@
+{{ if .comment }}
+<hr />
+<script src="https://utteranc.es/client.js"
+        repo="ntk148v/blog"
+        issue-term="pathname"
+        theme="icy-dark"
+        crossorigin="anonymous"
+        async>
+</script>
+<p>
+{{ end }}
 {{ if or ((.Page.Site.Params.mainMenu) (.show_back_menu_item)) }}
 <hr />
 <p>
