@@ -5,4 +5,8 @@ url: "/photos" # Sets the link for the page, after baseURL: http://example.com/p
 maxWidth: "800x" # Image Processing will resize image files to this maximum width and retain aspect ratio.
 clickablePhotos: false # Set 'true' to link images to the full size files.
 draft: true
+date: {{ .Date }}
+showDate: true
+comment: true
+tags: ["blog","gallery"]
 ---
