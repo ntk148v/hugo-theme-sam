@@ -1,0 +1,47 @@
+{{ define "section_content" }}
+<div class="section" id="content">
+    <center>
+        <img class="rounded-circle" src="{{ .Site.BaseURL }}/authors/{{ .Params.name }}/avatar.png" style="width: 150px;"/>
+        <h1>{{ .Params.name }}</h1>
+        <div class="social-container">
+            <ul class="list-inline mb-1 mt-2">
+                {{ with .Params.contact.twitter }}
+                    <li class="list-inline-item  ml-1 mr-1">
+                        <a class="text-warning" href="https://twitter.com/{{ substr . 1 }}">
+                            <i class="fa fa-twitter-square" style="font-size:25px;"></i>
+                        </a>
+                    </li>
+                {{ end }}
+                {{ with .Params.contact.github }}
+                    <li class="list-inline-item  ml-1 mr-1">
+                        <a class="text-warning" href="https://github.com/{{ substr . 1 }}">
+                            <i class="fa fa-github-square" style="font-size:25px;"></i>
+                        </a>
+                    </li>
+                {{ end }}
+                {{ with .Params.contact.linkedin }}
+                    <li class="list-inline-item  ml-1 mr-1">
+                        <a class="text-warning" href="https://linkedin.com/{{ substr . 1 }}">
+                            <i class="fa fa-linkedin-square" style="font-size:25px;"></i>
+                        </a>
+                    </li>
+                {{ end }}
+                {{ with .Params.contact.email }}
+                    <li class="list-inline-item  ml-1 mr-1">
+                        <a class="text-warning" href="https://linkedin.com/{{ substr . 1 }}">
+                            <i class="fa fa-envelope-square" style="font-size:25px;"></i>
+                        </a>
+                    </li>
+                {{ end }}
+            </ul>
+        </div>
+    </center>
+    {{ .Content }}
+</div>
+{{ end }}
+
+{{ define "bottom-menu" }}
+<div class="section bottom-menu">
+    {{ partial "bottom_menu.html" (dict "Page" . "show_back_menu_item" true) }}
+</div>
+{{ end }}
