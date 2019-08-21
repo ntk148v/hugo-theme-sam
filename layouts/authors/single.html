@@ -37,7 +37,15 @@
         </div>
     </center>
     {{ .Content }}
-</div>
+
+
+    <h2>Articles</h2>
+        <ul>
+            {{ range .Data.Pages }}
+                <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+            {{ end }}
+        </ul>
+    </div>
 {{ end }}
 
 {{ define "bottom-menu" }}
