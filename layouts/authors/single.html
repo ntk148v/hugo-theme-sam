@@ -26,9 +26,16 @@
                         </a>
                     </li>
                 {{ end }}
+                {{ with .Params.contact.facebook }}
+                    <li class="list-inline-item  ml-1 mr-1">
+                        <a class="text-warning" href="https://facebook.com/{{ substr . 1 }}">
+                            <i class="fa fa-facebook-square" style="font-size:25px;"></i>
+                        </a>
+                    </li>
+                {{ end }}
                 {{ with .Params.contact.email }}
                     <li class="list-inline-item  ml-1 mr-1">
-                        <a class="text-warning" href="https://linkedin.com/{{ substr . 1 }}">
+                        <a class="text-warning" href="mailto: {{ substr . 1 }}">
                             <i class="fa fa-envelope-square" style="font-size:25px;"></i>
                         </a>
                     </li>
