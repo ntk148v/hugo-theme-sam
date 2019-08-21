@@ -1,48 +1,50 @@
 {{ define "section_content" }}
 <div class="section" id="content">
-    <center>
-        <img class="rounded-circle" src="{{ .Site.BaseURL }}/authors/{{ .Params.name }}/avatar.png" style="width: 150px;"/>
+    <div class="author-head-container">
+        <img src="{{ .Site.BaseURL }}/authors/{{ .Params.name }}/avatar.jpg" style="width: 150px;"/>
         <h1>{{ .Params.name }}</h1>
-        <div class="social-container">
-            <ul class="list-inline mb-1 mt-2">
+        <p><i>{{ .Params.bio }}</i></p>
+        <hr/>
+        <div class="contact-container">
+            <ul>
                 {{ with .Params.contact.twitter }}
-                    <li class="list-inline-item  ml-1 mr-1">
-                        <a class="text-warning" href="https://twitter.com/{{ substr . 1 }}">
+                    <li >
+                        <a href="https://twitter.com/{{ substr . 1 }}">
                             <i class="fa fa-twitter-square" style="font-size:25px;"></i>
                         </a>
                     </li>
                 {{ end }}
                 {{ with .Params.contact.github }}
-                    <li class="list-inline-item  ml-1 mr-1">
-                        <a class="text-warning" href="https://github.com/{{ substr . 1 }}">
+                    <li >
+                        <a href="https://github.com/{{ . }}">
                             <i class="fa fa-github-square" style="font-size:25px;"></i>
                         </a>
                     </li>
                 {{ end }}
                 {{ with .Params.contact.linkedin }}
-                    <li class="list-inline-item  ml-1 mr-1">
-                        <a class="text-warning" href="https://linkedin.com/{{ substr . 1 }}">
+                    <li >
+                        <a href="https://linkedin.com/{{ . }}">
                             <i class="fa fa-linkedin-square" style="font-size:25px;"></i>
                         </a>
                     </li>
                 {{ end }}
                 {{ with .Params.contact.facebook }}
-                    <li class="list-inline-item  ml-1 mr-1">
-                        <a class="text-warning" href="https://facebook.com/{{ substr . 1 }}">
+                    <li >
+                        <a href="https://facebook.com/{{ . }}">
                             <i class="fa fa-facebook-square" style="font-size:25px;"></i>
                         </a>
                     </li>
                 {{ end }}
                 {{ with .Params.contact.email }}
-                    <li class="list-inline-item  ml-1 mr-1">
-                        <a class="text-warning" href="mailto: {{ substr . 1 }}">
+                    <li>
+                        <a href="mailto: {{ . }}">
                             <i class="fa fa-envelope-square" style="font-size:25px;"></i>
                         </a>
                     </li>
                 {{ end }}
             </ul>
         </div>
-    </center>
+    </div>
     {{ .Content }}
 
 
