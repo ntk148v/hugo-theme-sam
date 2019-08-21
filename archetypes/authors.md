@@ -3,7 +3,7 @@ name:
 contact:
     twitter:
     facebook:
-    irc:
+    github:
     linkedin:
     email:
 website:
