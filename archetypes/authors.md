@@ -7,7 +7,6 @@ contact:
     linkedin:
     email:
 website:
-bio:
 joinDate: {{ .Date }}
 comment: false
 ---
