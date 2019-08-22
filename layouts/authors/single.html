@@ -1,49 +1,45 @@
 {{ define "section_content" }}
 <div class="section" id="content">
-    <div class="author-head-container">
+    <div class="author-container">
         <img src="{{ .Site.BaseURL }}/authors/{{ .Params.name }}/avatar.jpg" style="width: 150px;" />
         <h1>{{ .Params.name }}</h1>
-        <p><i>{{ .Params.bio }}</i></p>
-        <hr />
-        <div class="contact-container">
-            <ul>
-                {{ with .Params.contact.twitter }}
-                <li>
-                    <a href="https://twitter.com/{{ substr . 1 }}">
-                        <i class="fa fa-twitter-square" style="font-size:25px;"></i>
-                    </a>
-                </li>
-                {{ end }}
-                {{ with .Params.contact.github }}
-                <li>
-                    <a href="https://github.com/{{ . }}">
-                        <i class="fa fa-github-square" style="font-size:25px;"></i>
-                    </a>
-                </li>
-                {{ end }}
-                {{ with .Params.contact.linkedin }}
-                <li>
-                    <a href="https://linkedin.com/{{ . }}">
-                        <i class="fa fa-linkedin-square" style="font-size:25px;"></i>
-                    </a>
-                </li>
-                {{ end }}
-                {{ with .Params.contact.facebook }}
-                <li>
-                    <a href="https://facebook.com/{{ . }}">
-                        <i class="fa fa-facebook-square" style="font-size:25px;"></i>
-                    </a>
-                </li>
-                {{ end }}
-                {{ with .Params.contact.email }}
-                <li>
-                    <a href="mailto: {{ . }}">
-                        <i class="fa fa-envelope-square" style="font-size:25px;"></i>
-                    </a>
-                </li>
-                {{ end }}
-            </ul>
-        </div>
+        <ul>
+            {{ with .Params.contact.twitter }}
+            <li>
+                <a href="https://twitter.com/{{ substr . 1 }}">
+                    <i class="fa fa-twitter-square"></i>
+                </a>
+            </li>
+            {{ end }}
+            {{ with .Params.contact.github }}
+            <li>
+                <a href="https://github.com/{{ . }}">
+                    <i class="fa fa-github-square"></i>
+                </a>
+            </li>
+            {{ end }}
+            {{ with .Params.contact.linkedin }}
+            <li>
+                <a href="https://linkedin.com/{{ . }}">
+                    <i class="fa fa-linkedin-square"></i>
+                </a>
+            </li>
+            {{ end }}
+            {{ with .Params.contact.facebook }}
+            <li>
+                <a href="https://facebook.com/{{ . }}">
+                    <i class="fa fa-facebook-square"></i>
+                </a>
+            </li>
+            {{ end }}
+            {{ with .Params.contact.email }}
+            <li>
+                <a href="mailto: {{ . }}">
+                    <i class="fa fa-envelope-square"></i>
+                </a>
+            </li>
+            {{ end }}
+        </ul>
     </div>
     {{ .Content }}
 
