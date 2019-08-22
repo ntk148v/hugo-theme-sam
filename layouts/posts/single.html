@@ -1,14 +1,13 @@
 {{ define "section_content" }}
 <div class="section" id="content">
     {{ .Date.Format (.Site.Params.dateForm | default "Mon Jan 02, 2006") }} &#183; {{ .WordCount }} words
-    <div class="author-container">
-        {{ if isset .Params "author" }}
-        {{ $author := index .Site.Data.authors .Params.author }}
-        <a href="{{ $author.social.website }}">
-            {{ $author.name }}
-        </a>
-        {{ else }}
-        Unknown
+    <div class="authors-container">
+        {{ with .Params.authors }}
+        {{ range . }}
+        {{ with $.Site.GetPage "taxonomyTerm" (printf "authors/%s" (urlize .)) }}
+        <figcaption><a href="{{ .Permalink }}">{{ .Params.name }}</a></figcaption>
+        {{ end }}
+        {{ end }}
         {{ end }}
     </div>
     {{ with .Params.tags }}

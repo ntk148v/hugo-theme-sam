@@ -1,7 +1,10 @@
 {{ define "section_content" }}
 <div class="section" id="content">
     <div class="author-container">
-        <img src="{{ .Site.BaseURL }}/authors/{{ .Params.name }}/avatar.jpg" style="width: 150px;" />
+        <!-- Get only the first picture in folder -->
+        {{ range first 1 (.Resources.ByType "image") }}
+        <img src="{{ .RelPermalink }}" alt="{{ .Name }}">
+        {{ end }}
         <h1>{{ .Params.name }}</h1>
         <ul>
             {{ with .Params.contact.twitter }}
