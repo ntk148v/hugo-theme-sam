@@ -2,14 +2,14 @@
 <div class="section" id="content">
     {{ .Date.Format (.Site.Params.dateForm | default "Mon Jan 02, 2006") }} &#183; {{ .WordCount }} words
     <div class="author-container">
-    {{ if isset .Params "author" }}
+        {{ if isset .Params "author" }}
         {{ $author := index .Site.Data.authors .Params.author }}
         <a href="{{ $author.social.website }}">
             {{ $author.name }}
         </a>
-    {{ else }}
+        {{ else }}
         Unknown
-    {{ end }}
+        {{ end }}
     </div>
     {{ with .Params.tags }}
     <div class="tag-container">
@@ -22,10 +22,10 @@
         {{ end }}
     </div>
     {{ end }}
-    <hr/>
+    <hr />
     <aside>
-       {{ .TableOfContents }}
-   </aside>
+        {{ .TableOfContents }}
+    </aside>
     {{ .Content }}
 </div>
 {{ end }}
