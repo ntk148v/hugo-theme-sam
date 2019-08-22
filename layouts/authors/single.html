@@ -7,35 +7,42 @@
             {{ with .Params.contact.twitter }}
             <li>
                 <a href="https://twitter.com/{{ substr . 1 }}">
-                    <i class="fa fa-twitter-square"></i>
+                    <i class="fa fa-twitter"></i>
                 </a>
             </li>
             {{ end }}
             {{ with .Params.contact.github }}
             <li>
                 <a href="https://github.com/{{ . }}">
-                    <i class="fa fa-github-square"></i>
+                    <i class="fa fa-github"></i>
                 </a>
             </li>
             {{ end }}
             {{ with .Params.contact.linkedin }}
             <li>
                 <a href="https://linkedin.com/{{ . }}">
-                    <i class="fa fa-linkedin-square"></i>
+                    <i class="fa fa-linkedin"></i>
                 </a>
             </li>
             {{ end }}
             {{ with .Params.contact.facebook }}
             <li>
                 <a href="https://facebook.com/{{ . }}">
-                    <i class="fa fa-facebook-square"></i>
+                    <i class="fa fa-facebook"></i>
                 </a>
             </li>
             {{ end }}
             {{ with .Params.contact.email }}
             <li>
                 <a href="mailto: {{ . }}">
-                    <i class="fa fa-envelope-square"></i>
+                    <i class="fa fa-envelope"></i>
+                </a>
+            </li>
+            {{ end }}
+            {{ with .Params.website }}
+            <li>
+                <a href="{{ . }}">
+                    <i class="fa fa-globe"></i>
                 </a>
             </li>
             {{ end }}
