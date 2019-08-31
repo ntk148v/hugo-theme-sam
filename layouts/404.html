@@ -14,24 +14,16 @@
 </head>
 
 <body>
-    {{ block "main" . }}
     <div class="wrap">
-        {{ block "section_title" . }}
         <div class="section" id="title">{{ .Title }}</div>
-        {{ end }}
-        {{ block "section_content" . }}
         <div class="section" id="content">
             <iframe src="https://giphy.com/embed/9J7tdYltWyXIY" width="480" height="404" frameBorder="0"
                 class="giphy-embed" allowFullScreen></iframe>
             <p><a href="https://giphy.com/gifs/internet-google-chrone-9J7tdYltWyXIY">via GIPHY</a></p>
             <h1 id="title"><a href="{{ '/' | relURL }}">Go Home</a></h1>
         </div>
-        {{ end }}
-        {{ block "footer" . }}
         <div class="section footer">{{ partial "footer.html" . }}</div>
-        {{ end }}
     </div>
-    {{ end }}
 </body>
 
 </html>
