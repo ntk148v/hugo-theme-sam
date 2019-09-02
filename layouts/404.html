@@ -21,7 +21,7 @@
                 class="giphy-embed" allowFullScreen></iframe>
         </div>
         {{ if .Site.Params.mainMenu }}
-        <div class="section bottom-menu">{{ partial "bottom_menu.html" (dict "Page" . "show_back_menu_item" false) }}</div>{{ end }}
+        <div class="section bottom-menu">{{ partial "bottom_menu.html" (dict "Page" . "show_back_menu_item" false) }}</div>
         {{ end }}
         <div class="section footer">{{ partial "footer.html" . }}</div>
     </div>
